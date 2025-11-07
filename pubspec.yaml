@@ -1,8 +1,8 @@
 name: taptest_runtime
 description: "Runtime package for TapTest framework. It exposes a thin layer to interoperate TapTest within your app."
-version: 0.0.4
+version: 0.0.5
 homepage: https://taptest.dev
-repository: https://github.com/chris-rutkowski/taptest
+repository: https://github.com/chris-rutkowski/taptest_runtime
 
 environment:
   sdk: ^3.9.2
