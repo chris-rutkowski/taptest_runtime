@@ -37,6 +37,11 @@ final class TapTestRuntime extends InheritedNotifier<Listenable> {
   );
 
   /// Retrieves the nearest [TapTestRuntime] instance from the widget tree.
+  /// Will cause the calling widget to rebuild when the runtime data changes.
   static TapTestRuntimeData? of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<TapTestRuntime>()?.data;
+
+  /// Retrieves the nearest [TapTestRuntime] instance from the widget tree without listening.
+  static TapTestRuntimeData? read(BuildContext context) =>
+      context.getInheritedWidgetOfExactType<TapTestRuntime>()?.data;
 }
