@@ -1,13 +1,15 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// Runtime parameters provided by TapTest to adjust your app during testing.
-final class RuntimeParams {
-  /// Change notifier providing requested theme mode.
-  final ValueListenable<ThemeMode> themeMode;
+import 'taptest_runtime.dart';
 
-  /// Change notifier providing requested locale.
-  final ValueListenable<Locale> locale;
+/// Runtime data provided by TapTest to adjust your app during testing.
+/// It is provided by TapTest's Config builder and accessible anywhere in the widget tree via [TapTestRuntime.of].
+final class TapTestRuntimeData {
+  /// Theme mode to use in the app.
+  final ThemeMode themeMode;
+
+  /// Locale to use in the app.
+  final Locale locale;
 
   /// Initial route to start the app with.
   final String? initialRoute;
@@ -18,8 +20,8 @@ final class RuntimeParams {
   /// Retrieves the first extension of type [T], or null if none found.
   T? extension<T>() => extensions.whereType<T>().firstOrNull;
 
-  /// Creates a new instance of [RuntimeParams].
-  const RuntimeParams({
+  /// Creates a new instance of [TapTestRuntimeData].
+  const TapTestRuntimeData({
     required this.themeMode,
     required this.locale,
     required this.initialRoute,
